@@ -2,6 +2,7 @@
 var express = require('express');
 var app = express();
 var ejs = require('ejs');
+var path = require('path');
 
 // 设置 view 引擎 
 app.set('views', path.join(__dirname, 'views')); 
