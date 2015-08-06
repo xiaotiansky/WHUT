@@ -3,10 +3,16 @@ var express = require('express');
 var app = express();
 var ejs = require('ejs');
 
+// 设置 view 引擎 
+app.set('views', path.join(__dirname, 'views')); 
+app.set('view engine', 'ejs'); 
+app.use(express.static('public')); 
+
+
 // App 全局配置
-app.engine('.html', ejs.__express);
-app.set('view engine', 'html');// app.set('view engine', 'ejs');
-app.set('views','cloud/views');   // 设置模板目录
+//app.engine('.html', ejs.__express);
+//app.set('view engine', 'html');// app.set('view engine', 'ejs');
+//app.set('views','cloud/views');   // 设置模板目录
 //app.set('view engine', 'ejs');
 // 设置 template 引擎
 app.use(express.bodyParser());    // 读取请求 body 的中间件
