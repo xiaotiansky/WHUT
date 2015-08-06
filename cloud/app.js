@@ -1,10 +1,14 @@
 // 在 Cloud code 里初始化 Express 框架
 var express = require('express');
 var app = express();
+var ejs = require('ejs');
 
 // App 全局配置
+app.engine('.html', ejs.__express);
+app.set('view engine', 'html');// app.set('view engine', 'ejs');
 app.set('views','cloud/views');   // 设置模板目录
-app.set('view engine', 'ejs');    // 设置 template 引擎
+//app.set('view engine', 'ejs');
+// 设置 template 引擎
 app.use(express.bodyParser());    // 读取请求 body 的中间件
 
 // 使用 Express 路由 API 服务 /hello 的 HTTP GET 请求
