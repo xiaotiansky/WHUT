@@ -28,4 +28,5 @@ app.get('/aboutsky',function(req,res){
    res.render('aboutsky', {message:'yunian'});
 });
 
+app.listen();
 module.exports = app;
